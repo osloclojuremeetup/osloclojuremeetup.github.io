@@ -1,1 +1,2 @@
-# osloclojuremeetup.github.io
+# Oslo Clojure Meetup
+

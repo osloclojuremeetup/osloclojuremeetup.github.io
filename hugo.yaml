@@ -1,0 +1,4 @@
+baseURL: "https://osloclojuremeetup.github.io/"
+languageCode: en-us
+title: Oslo Clojure Meetup
+theme: ["PaperMod"]
