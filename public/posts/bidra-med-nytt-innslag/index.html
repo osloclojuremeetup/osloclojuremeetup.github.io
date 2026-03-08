@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Bidra Med Nytt Innslag | Oslo Clojure Meetup</title>
+<meta name="keywords" content="">
+<meta name="description" content="Hei og velkommen til Oslo Clojure Meetup sin nettside! Her har vi en oversikt over tidligere meetups og litt info om dem.
+Under følger en kort guide for å bidra med et nytt innslag.
+To framgangsmåter
+Denne nettsiden er bygd med Hugo, et verktøy for å genere statiske nettsider.
+I deres quick start guide finnes det instruksjoner for å installere og komme i gang med Hugo.
+Du kan enten bruke hugo direkte, eller så kan du bruke det lille scriptet ./ocm.sh som du finner i dette repoet.">
+<meta name="author" content="">
+<link rel="canonical" href="https://osloclojuremeetup.github.io/posts/bidra-med-nytt-innslag/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://osloclojuremeetup.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://osloclojuremeetup.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://osloclojuremeetup.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://osloclojuremeetup.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://osloclojuremeetup.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://osloclojuremeetup.github.io/posts/bidra-med-nytt-innslag/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://osloclojuremeetup.github.io/posts/bidra-med-nytt-innslag/">
+  <meta property="og:site_name" content="Oslo Clojure Meetup">
+  <meta property="og:title" content="Bidra Med Nytt Innslag">
+  <meta property="og:description" content="Hei og velkommen til Oslo Clojure Meetup sin nettside! Her har vi en oversikt over tidligere meetups og litt info om dem.
+Under følger en kort guide for å bidra med et nytt innslag.
+To framgangsmåter Denne nettsiden er bygd med Hugo, et verktøy for å genere statiske nettsider.
+I deres quick start guide finnes det instruksjoner for å installere og komme i gang med Hugo.
+Du kan enten bruke hugo direkte, eller så kan du bruke det lille scriptet ./ocm.sh som du finner i dette repoet.">
+  <meta property="og:locale" content="no_nb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-08T21:16:13+01:00">
+    <meta property="article:modified_time" content="2026-03-08T21:16:13+01:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bidra Med Nytt Innslag">
+  <meta name="twitter:description" content="Hei og velkommen til Oslo Clojure Meetup sin nettside! Her har vi en oversikt over tidligere meetups og litt info om dem.
+Under følger en kort guide for å bidra med et nytt innslag.
+To framgangsmåter Denne nettsiden er bygd med Hugo, et verktøy for å genere statiske nettsider.
+I deres quick start guide finnes det instruksjoner for å installere og komme i gang med Hugo.
+Du kan enten bruke hugo direkte, eller så kan du bruke det lille scriptet ./ocm.sh som du finner i dette repoet.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://osloclojuremeetup.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Bidra Med Nytt Innslag",
+      "item": "https://osloclojuremeetup.github.io/posts/bidra-med-nytt-innslag/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Bidra Med Nytt Innslag",
+  "name": "Bidra Med Nytt Innslag",
+  "description": "Hei og velkommen til Oslo Clojure Meetup sin nettside! Her har vi en oversikt over tidligere meetups og litt info om dem.\nUnder følger en kort guide for å bidra med et nytt innslag.\nTo framgangsmåter Denne nettsiden er bygd med Hugo, et verktøy for å genere statiske nettsider.\nI deres quick start guide finnes det instruksjoner for å installere og komme i gang med Hugo.\nDu kan enten bruke hugo direkte, eller så kan du bruke det lille scriptet ./ocm.sh som du finner i dette repoet.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Hei og velkommen til Oslo Clojure Meetup sin nettside! Her har vi en oversikt over tidligere meetups og litt info om dem.\nUnder følger en kort guide for å bidra med et nytt innslag.\nTo framgangsmåter Denne nettsiden er bygd med Hugo, et verktøy for å genere statiske nettsider.\nI deres quick start guide finnes det instruksjoner for å installere og komme i gang med Hugo.\nDu kan enten bruke hugo direkte, eller så kan du bruke det lille scriptet ./ocm.sh som du finner i dette repoet.\nQuick Start med ./ocm.sh Du må gjerne lese hele posten, men hvis du helst vil komme i gang så fort som mulig, er dette det du trenger å gjøre:\nchmod +x ./ocm.sh for å gjøre ./ocm.sh eksekverbar ./ocm.sh new-post for å opprette en ny post Fyll inn hver av seksjonene i den nye fila ./content/posts/.md ./ocm.sh preview for å forhåndsvise posten Set draft: false i frontmatter’et på din post, som ligger i ./content/posts/.md ./ocm.sh build Commit og push! Når endringen er i master, deployes siden automatisk 🥳 Opprette en ny post Hver post en enkel Markdown fil som ligger i ./content/posts/.md.\nDu kan generere en ny fil ved å bruke Hugo,\nhugo new content content/posts/.md\neller med ./ocm.sh,\n./ocm.sh new-post Da får du lagd en Markdown fil som starter med litt metadata. ./ocm.sh lager også overskrifter for deg.\n--- title: 'Tittel På Ditt Innslag' date: '2026-01-01' draft: true --- Format For hver meetup, vil vi gjerne ha med:\nTema Hvem som snakket Dato Referanser (for eksempel lenker til relevante artikler, talks, repoer, kodesnutter osv.) Opptak, hvis det finnes Her er et forslag du kan bruke til inspirasjon:\n--- title: 'Oslo Socially Functional Reboot: Functional Core / Imperative Shell' date: '2026-02-24' draft: true --- ### Tema Funksjonell kjerne/imperativt skall; hvordan å anvende funksjonell programmering gjennom en hel programmvarearkitektur. Konfliktfrie repliserte datatyper og API-design; unngå problemer med mutasjon og samtidig skriving. ### Talere Magnar Sveen: \"Funksjonell kjerne, imperativt skall: en arkitektur på vranga\" Teodor Elstad: \"Can Conflict-free Replicated Data-Types teach us anything about API-design?\" ### Dato 24. februar 2026 ### Referanser Opptak av \"Funksjonell kjerne, imperativt skall\" på JavaZone: [En arkitektur på vranga på JavaZone](https://parenteser.mattilsynet.io/fkis-jz/) Paper nevnt under \"Can Conflict-free Replicated Data-Types teach us anything about API-design?\" [A comprehensive study of Convergent and Commutative Replicated Data Types](https://inria.hal.science/inria-00555588v1/document) Bloggpost skrevet av Teodor Heggelund etter meetup'en: [Intensjon, instruks og effektuering: byggesteiner i effektsystemer](https://parenteser.mattilsynet.io/intensjon-instruks-effektuering/) Forhåndsvisning av posten din Hvis du vil, så kan du nå forhåndsvise posten din!\nDet gjør du med enten,\nhugo hugo server --buildDrafts --navigateToChanged\neller\n./ocm.sh preview\nsom begge starter opp en liten server på localhost:1313 for deg!\nPublisere posten din Når du er fornøyd med posten din, så er det bare ett steg igjen: Publisere!\nHvis du er skarp, la du kanskje merke til den lille draft: true-greia i frontmatter’et? Den er der slik at man kan jobbe med utkast uten at man ved uhell publiserer posten når man pusher branchen sin.\nMen nå som vi er klare, kan vi sette draft til false og så fyre løs med enten\nhugo\neller\n./ocm.sh build!\nDa genereres det en tilsvarende HTML fil i ./public/posts//index.html.\nDa er det bare å committe og pushe til GitHub, og når endringen din er i master, så deployes siden automatisk 🥳\n",
+  "wordCount" : "550",
+  "inLanguage": "en",
+  "datePublished": "2026-03-08T21:16:13+01:00",
+  "dateModified": "2026-03-08T21:16:13+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://osloclojuremeetup.github.io/posts/bidra-med-nytt-innslag/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Oslo Clojure Meetup",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://osloclojuremeetup.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://osloclojuremeetup.github.io/" accesskey="h" title="Oslo Clojure Meetup (Alt + H)">Oslo Clojure Meetup</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Bidra Med Nytt Innslag
+    </h1>
+    <div class="post-meta"><span title='2026-03-08 21:16:13 +0100 CET'>March 8, 2026</span>&nbsp;·&nbsp;<span>3 min</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Hei og velkommen til Oslo Clojure Meetup sin nettside! Her har vi en oversikt over tidligere meetups og litt info om dem.</p>
+<p>Under følger en kort guide for å bidra med et nytt innslag.</p>
+<h2 id="to-framgangsmåter">To framgangsmåter<a hidden class="anchor" aria-hidden="true" href="#to-framgangsmåter">#</a></h2>
+<p>Denne nettsiden er bygd med <a href="https://gohugo.io/">Hugo</a>, et verktøy for å genere statiske nettsider.</p>
+<p>I deres <a href="https://gohugo.io/getting-started/quick-start">quick start guide</a> finnes det instruksjoner for å installere og komme i gang med Hugo.</p>
+<p>Du kan enten bruke <code>hugo</code> direkte, eller så kan du bruke det lille scriptet <code>./ocm.sh</code> som du finner i dette repoet.</p>
+<h3 id="quick-start-med-ocmsh">Quick Start med <code>./ocm.sh</code><a hidden class="anchor" aria-hidden="true" href="#quick-start-med-ocmsh">#</a></h3>
+<p>Du må gjerne lese hele posten, men hvis du helst vil komme i gang så fort som mulig, er dette det du trenger å gjøre:</p>
+<ol>
+<li><code>chmod +x ./ocm.sh</code> for å gjøre <code>./ocm.sh</code> eksekverbar</li>
+<li><code>./ocm.sh new-post &lt;Tittlen På Ditt Innslag&gt;</code> for å opprette en ny post</li>
+<li>Fyll inn hver av seksjonene i den nye fila <code>./content/posts/&lt;tittelen-på-ditt-innslag&gt;.md</code></li>
+<li><code>./ocm.sh preview</code> for å forhåndsvise posten</li>
+<li>Set <code>draft: false</code> i frontmatter&rsquo;et på din post, som ligger i <code>./content/posts/&lt;tittelen-på-ditt-innslag&gt;.md</code></li>
+<li><code>./ocm.sh build</code></li>
+<li>Commit og push! Når endringen er i <code>master</code>, deployes siden automatisk 🥳</li>
+</ol>
+<h2 id="opprette-en-ny-post">Opprette en ny post<a hidden class="anchor" aria-hidden="true" href="#opprette-en-ny-post">#</a></h2>
+<p>Hver post en enkel Markdown fil som ligger i <code>./content/posts/&lt;tittel-på-ditt-innslag&gt;.md</code>.</p>
+<p>Du kan generere en ny fil ved å bruke Hugo,</p>
+<p><code>hugo new content content/posts/&lt;tittel-på-ditt-innslag&gt;.md</code></p>
+<p>eller med <code>./ocm.sh</code>,</p>
+<p><code>./ocm.sh new-post &lt;Tittel På Ditt Innslag&gt;</code></p>
+<p>Da får du lagd en Markdown fil som starter med litt metadata. <code>./ocm.sh</code> lager også overskrifter for deg.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#39;Tittel På Ditt Innslag&#39;
+</span></span><span class="line"><span class="cl">date: &#39;2026-01-01&#39;
+</span></span><span class="line"><span class="cl">draft: true
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></div><h2 id="format">Format<a hidden class="anchor" aria-hidden="true" href="#format">#</a></h2>
+<p>For hver meetup, vil vi gjerne ha med:</p>
+<ul>
+<li>Tema</li>
+<li>Hvem som snakket</li>
+<li>Dato</li>
+<li>Referanser (for eksempel lenker til relevante artikler, talks, repoer, kodesnutter osv.)</li>
+<li>Opptak, hvis det finnes</li>
+</ul>
+<p>Her er et forslag du kan bruke til inspirasjon:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#39;Oslo Socially Functional Reboot: Functional Core / Imperative Shell&#39;
+</span></span><span class="line"><span class="cl">date: &#39;2026-02-24&#39;
+</span></span><span class="line"><span class="cl">draft: true
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">### Tema
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Funksjonell kjerne/imperativt skall; hvordan å anvende funksjonell programmering gjennom en hel programmvarearkitektur.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Konfliktfrie repliserte datatyper og API-design; unngå problemer med mutasjon og samtidig skriving.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">### Talere
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Magnar Sveen: &#34;Funksjonell kjerne, imperativt skall: en arkitektur på vranga&#34;
+</span></span><span class="line"><span class="cl">Teodor Elstad: &#34;Can Conflict-free Replicated Data-Types teach us anything about API-design?&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">### Dato
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">24.</span> februar 2026
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">### Referanser
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Opptak av &#34;Funksjonell kjerne, imperativt skall&#34; på JavaZone:
+</span></span><span class="line"><span class="cl">[<span class="nt">En arkitektur på vranga på JavaZone</span>](<span class="na">https://parenteser.mattilsynet.io/fkis-jz/</span>)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Paper nevnt under &#34;Can Conflict-free Replicated Data-Types teach us anything about API-design?&#34;
+</span></span><span class="line"><span class="cl">[<span class="nt">A comprehensive study of Convergent and Commutative
+</span></span></span><span class="line"><span class="cl"><span class="nt">Replicated Data Types</span>](<span class="na">https://inria.hal.science/inria-00555588v1/document</span>)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Bloggpost skrevet av Teodor Heggelund etter meetup&#39;en:
+</span></span><span class="line"><span class="cl">[<span class="nt">Intensjon, instruks og effektuering: byggesteiner i effektsystemer</span>](<span class="na">https://parenteser.mattilsynet.io/intensjon-instruks-effektuering/</span>)
+</span></span></code></pre></div><h2 id="forhåndsvisning-av-posten-din">Forhåndsvisning av posten din<a hidden class="anchor" aria-hidden="true" href="#forhåndsvisning-av-posten-din">#</a></h2>
+<p>Hvis du vil, så kan du nå forhåndsvise posten din!</p>
+<p>Det gjør du med enten,</p>
+<p><code>hugo hugo server --buildDrafts --navigateToChanged</code></p>
+<p>eller</p>
+<p><code>./ocm.sh preview</code></p>
+<p>som begge starter opp en liten server på <code>localhost:1313</code> for deg!</p>
+<h2 id="publisere-posten-din">Publisere posten din<a hidden class="anchor" aria-hidden="true" href="#publisere-posten-din">#</a></h2>
+<p>Når du er fornøyd med posten din, så er det bare ett steg igjen: Publisere!</p>
+<p>Hvis du er skarp, la du kanskje merke til den lille <code>draft: true</code>-greia i frontmatter&rsquo;et? Den er der slik at man kan jobbe med utkast uten at man ved uhell publiserer posten når man pusher branchen sin.</p>
+<p>Men nå som vi er klare, kan vi sette <code>draft</code> til <code>false</code> og så fyre løs med enten</p>
+<p><code>hugo</code></p>
+<p>eller</p>
+<p><code>./ocm.sh build</code>!</p>
+<p>Da genereres det en tilsvarende HTML fil i <code>./public/posts/&lt;tittlen-på-ditt-innslag&gt;/index.html</code>.</p>
+<p>Da er det bare å committe og pushe til GitHub, og når endringen din er i <code>master</code>, så deployes siden automatisk 🥳</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://osloclojuremeetup.github.io/">Oslo Clojure Meetup</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

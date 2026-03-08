@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://osloclojuremeetup.github.io/sitemap.xml

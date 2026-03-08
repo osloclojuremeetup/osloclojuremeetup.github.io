@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Oslo Clojure Meetup</title>
-    <link>https://osloclojuremeetup.github.io/</link>
-    <description>Recent content on Oslo Clojure Meetup</description>
+    <title>Posts on Oslo Clojure Meetup</title>
+    <link>https://osloclojuremeetup.github.io/posts/</link>
+    <description>Recent content in Posts on Oslo Clojure Meetup</description>
     <generator>Hugo</generator>
     <language>no-nb</language>
     <lastBuildDate>Sun, 08 Mar 2026 21:16:13 +0100</lastBuildDate>
-    <atom:link href="https://osloclojuremeetup.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://osloclojuremeetup.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bidra Med Nytt Innslag</title>
       <link>https://osloclojuremeetup.github.io/posts/bidra-med-nytt-innslag/</link>
