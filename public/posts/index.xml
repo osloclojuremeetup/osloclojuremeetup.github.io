@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Oslo Clojure Meetup</title>
+    <link>https://osloclojuremeetup.github.io/posts/</link>
+    <description>Recent content in Posts on Oslo Clojure Meetup</description>
+    <generator>Hugo</generator>
+    <language>no-nb</language>
+    <lastBuildDate>Sun, 08 Mar 2026 21:16:13 +0100</lastBuildDate>
+    <atom:link href="https://osloclojuremeetup.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bidra Med Nytt Innslag</title>
+      <link>https://osloclojuremeetup.github.io/posts/bidra-med-nytt-innslag/</link>
+      <pubDate>Sun, 08 Mar 2026 21:16:13 +0100</pubDate>
+      <guid>https://osloclojuremeetup.github.io/posts/bidra-med-nytt-innslag/</guid>
+      <description>&lt;p&gt;Hei og velkommen til Oslo Clojure Meetup sin nettside! Her har vi en oversikt over tidligere meetups og litt info om dem.&lt;/p&gt;
+&lt;p&gt;Under følger en kort guide for å bidra med et nytt innslag.&lt;/p&gt;
+&lt;h2 id=&#34;to-framgangsmåter&#34;&gt;To framgangsmåter&lt;/h2&gt;
+&lt;p&gt;Denne nettsiden er bygd med &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;, et verktøy for å genere statiske nettsider.&lt;/p&gt;
+&lt;p&gt;I deres &lt;a href=&#34;https://gohugo.io/getting-started/quick-start&#34;&gt;quick start guide&lt;/a&gt; finnes det instruksjoner for å installere og komme i gang med Hugo.&lt;/p&gt;
+&lt;p&gt;Du kan enten bruke &lt;code&gt;hugo&lt;/code&gt; direkte, eller så kan du bruke det lille scriptet &lt;code&gt;./ocm.sh&lt;/code&gt; som du finner i dette repoet.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
