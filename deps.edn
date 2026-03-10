@@ -1,1 +1,7 @@
-{}
+{:paths ["src" "test"]
+ :deps {babashka/fs {:mvn/version "0.5.31"}
+        com.datomic/peer {:mvn/version "1.0.7491"}
+        io.github.nextjournal/markdown {:mvn/version "0.7.222"}
+        io.github.tonsky/clj-reload {:mvn/version "1.0.0"}
+        lambdaisland/kaocha {:mvn/version "1.91.1392"}
+        no.cjohansen/replicant {:mvn/version "2025.12.1"}}}
