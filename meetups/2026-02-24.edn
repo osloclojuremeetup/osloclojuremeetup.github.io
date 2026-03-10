@@ -1,0 +1,7 @@
+{:meetup/date "2026-02-24"
+ :meetup/title "Oslo Socially Functional Reboot: Functional Core / Imperative Shell"
+ :meetup/description "Functional programming is more than map, filter and reduce: functional principles can improve your system design. More than that, this meetup marks the resurrection of Oslo Socially Functional! Back in the day, Bodil Stokke et al invited functionally minded people to discuss across language boundaries. We strive to pick up that torch. All functionally minded people are invited! And all functionally curious people too!"
+ :meetup/speakers #{{:github/id "teodoran"
+                     :person/name "Teodor Elstad"
+                     :person/website {:site/url "https://teodoran.github.io/"
+                                      :site/title "teodoran"}}}}
