@@ -1,11 +1,11 @@
-(ns build-test
-  (:require [build :as build]
+(ns site-test
+  (:require [site :as site]
             [clojure.test :refer [deftest is]]))
 
-(defonce db (build/create-db))
+(defonce db (site/create-db))
 
 (deftest render-frontpage
-  (is (contains? (->> (build/render-frontpage db)
+  (is (contains? (->> (site/render-frontpage db)
                       (tree-seq coll? identity)
                       set)
                  "Oslo Socially Functional Reboot: Functional Core / Imperative Shell")))
