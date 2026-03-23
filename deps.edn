@@ -5,4 +5,5 @@
         io.github.nextjournal/markdown {:mvn/version "0.7.222"}
         io.github.tonsky/clj-reload {:mvn/version "1.0.0"}
         lambdaisland/kaocha {:mvn/version "1.91.1392"}
-        no.cjohansen/replicant {:mvn/version "2025.12.1"}}}
+        no.cjohansen/replicant {:mvn/version "2025.12.1"}
+        ring/ring-core {:mvn/version "1.15.3"}}}

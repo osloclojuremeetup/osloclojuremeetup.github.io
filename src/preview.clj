@@ -1,11 +1,13 @@
 (ns preview
   (:require
-   [replicant.string]
+   [clojure.java.browse]
    [org.httpkit.server :as httpkit]
-   [clojure.java.browse]))
+   [replicant.string]
+   [ring.middleware.content-type]))
 
 (defn handler [req]
   (let [pages (:site/pages req)
+        assets (:site/assets req)
         db (:site/db req)]
     (cond (and (= (:request-method req) :get)
                (contains? pages (:uri req)))
@@ -13,6 +15,13 @@
            :headers {"Content-Type" "text/html"}
            :body (str "<!DOCTYPE html>\n"
                       (replicant.string/render ((get pages (:uri req)) db)))}
+
+          (and (= (:request-method req) :get)
+               (contains? assets (:uri req)))
+          (ring.middleware.content-type/content-type-response
+           {:status 200
+            :body (get assets (:uri req))}
+           req)
 
           :else
           {:status 404})))

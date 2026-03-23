@@ -35,7 +35,8 @@
 (defn render-frontpage [db]
   [:html
    [:head
-    [:meta {:charset "utf-8"}]]
+    [:meta {:charset "utf-8"}]
+    [:link {:href "/css/layout.css" :rel "stylesheet"}]]
    [:body {:style {:max-width "1000px"}}
     [:h1 "Oslo Clojure Meetup"]
     [:p "Hei og velkommen til Oslo Clojure Meetup sin nettside!"]
@@ -56,7 +57,7 @@
                       (load-speakers)))
       :db-after))
 
-(def files
+(def html-files
   {"index.html" #'render-frontpage})
 
 (defn pagify "Given file+render, return a seq of uri+render"
@@ -66,8 +67,17 @@
      ["/" render-fn]]
     [file render-fn]))
 
+(def asset-paths
+  #{"css/layout.css"})
+
+(defn load-asset [asset-path]
+  [(str "/" asset-path) (fs/file asset-path)])
+
+(def uri->asset-file
+  (into {} (map load-asset) asset-paths))
+
 (def pages
-  (->> files
+  (->> html-files
        (mapcat pagify)
        (into {})))
 
@@ -76,18 +86,26 @@
 (defn inject [req]
   (-> req
       (assoc :site/pages pages)
+      (assoc :site/assets uri->asset-file)
       (assoc :site/db db)))
 
 ;; clojure -X site/build
 (defn build
   ([] (build {}))
   ([_]
+   (when (fs/exists? "build")
+     (fs/delete-tree "build"))
    (fs/create-dirs "build")
    (let [db (create-db)]
-     (doseq [[file render] files]
+     (doseq [[file render] html-files]
        (spit (fs/file "build" file)
              (str "<!DOCTYPE html>\n"
-                  (replicant.string/render (render db))))))))
+                  (replicant.string/render (render db)))))
+     (doseq [asset asset-paths]
+       (let [target (fs/file "build" asset)]
+         (fs/create-dirs (fs/parent target))
+         (fs/copy asset target))))))
+
 
 (comment
   (set! *print-namespace-maps* false)
