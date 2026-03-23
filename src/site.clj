@@ -23,19 +23,22 @@
 
 (defn render-meetup [meetup]
   (list
-   [:div [:strong (:meetup/title meetup)]]
-   [:div (:meetup/description meetup)]
-   (for [talk (->> (:meetup/agenda meetup)
-                   (sort-by :agenda/number))]
-     [:div [:strong (:talk/title talk)]
-      " ("
-      (str/join ", " (keep :person/name (:talk/speakers talk)))
-      ")"])))
+   [:div (:meetup/date meetup)]
+   [:div
+    [:div [:strong (:meetup/title meetup)]]
+    [:div (:meetup/description meetup)]
+    (for [talk (->> (:meetup/agenda meetup)
+                    (sort-by :agenda/number))]
+      [:div [:strong (:talk/title talk)]
+       " ("
+       (str/join ", " (keep :person/name (:talk/speakers talk)))
+       ")"])]))
 
 (defn render-frontpage [db]
   [:html
    [:head
     [:meta {:charset "utf-8"}]
+    [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
     [:link {:href "/css/layout.css" :rel "stylesheet"}]]
    [:body {:style {:max-width "1000px"}}
     [:h1 "Oslo Clojure Meetup"]
@@ -48,8 +51,9 @@
      "."]
 
     [:h2 "Meetups 😊"]
-    (->> (db/find-meetups db)
-         (map render-meetup))]])
+    [:div#meetups
+     (->> (db/find-meetups db)
+          (map render-meetup))]]])
 
 (defn create-db []
   (-> (db/create-empty)
