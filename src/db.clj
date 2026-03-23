@@ -32,8 +32,17 @@
     :db/cardinality :db.cardinality/many}
    {:db/ident :person/website
     :db/valueType :db.type/ref
+    :db/cardinality :db.cardinality/one}
+   {:db/ident :meetup/agenda
+    :db/valueType :db.type/ref
+    :db/cardinality :db.cardinality/many
+    :db/isComponent true}
+   {:db/ident :talk/speakers
+    :db/valueType :db.type/ref
+    :db/cardinality :db.cardinality/many}
+   {:db/ident :talk/title
+    :db/valueType :db.type/string
     :db/cardinality :db.cardinality/one}])
-
 
 (defn create-empty []
   (let [uri (str "datomic:mem://" (random-uuid))
