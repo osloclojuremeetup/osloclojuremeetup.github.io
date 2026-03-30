@@ -6,4 +6,6 @@
         io.github.tonsky/clj-reload {:mvn/version "1.0.0"}
         lambdaisland/kaocha {:mvn/version "1.91.1392"}
         no.cjohansen/replicant {:mvn/version "2025.12.1"}
-        ring/ring-core {:mvn/version "1.15.3"}}}
+        ring/ring-core {:mvn/version "1.15.3"}}
+ :aliases
+ {:kaocha {:main-opts ["-m" "kaocha.runner"]}}}

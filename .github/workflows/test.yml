@@ -1,0 +1,21 @@
+name: Clojure unit tests
+on: [push, pull_request]
+jobs:
+  Testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install Java
+        uses: actions/setup-java@master
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: Install clojure tools
+        uses: DeLaGuardo/setup-clojure@master
+        with:
+          cli: latest
+      - name: Download deps
+        run: clojure -P
+      - name: Run tests
+        run: clojure -M:kaocha
