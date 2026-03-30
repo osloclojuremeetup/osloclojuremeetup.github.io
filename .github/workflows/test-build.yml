@@ -1,11 +1,11 @@
-name: Clojure unit tests
+name: Test and build
 on: [push, pull_request]
 jobs:
-  Testing:
+  test-build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Install Java
         uses: actions/setup-java@master
         with:
@@ -15,7 +15,19 @@ jobs:
         uses: DeLaGuardo/setup-clojure@master
         with:
           cli: latest
-      - name: Download deps
+      - name: Prepare deps
         run: clojure -P
       - name: Run tests
         run: clojure -M:kaocha
+      - name: Build
+        run: clojure -X site/build
+#  deploy:
+#    needs: test-build
+#    environment:
+#      name: github-pages
+#      url: ${{ steps.deployment.outputs.page_url }}
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Deploy to GitHub Pages
+#        id: deployment
+#        uses: actions/deploy-pages@v4
