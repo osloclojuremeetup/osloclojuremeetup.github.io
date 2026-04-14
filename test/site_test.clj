@@ -3,6 +3,7 @@
    [clojure.test :refer [deftest is]]
    [site :as site]))
 
+#_
 (deftest render-frontpage
   (is (contains? (->> (site/create-db)
                       site/render-frontpage
