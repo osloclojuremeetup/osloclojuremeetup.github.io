@@ -1,5 +1,9 @@
 (ns ^:clj-reload/no-reload state)
 
+;; Server
+(defonce !server (atom nil))
+(defonce !conns (atom #{}))
+
 ;; SSE connections
 (defonce !sessions (atom nil))
 

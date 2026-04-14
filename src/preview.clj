@@ -1,11 +1,12 @@
 (ns preview
   (:require
+   [babashka.fs :as fs]
    [clojure.java.browse]
    [org.httpkit.server :as httpkit]
    [replicant.string]
    [ring.middleware.content-type]
    [sse]
-   [babashka.fs :as fs]))
+   [state]))
 
 (defn handler [req]
   (let [uri (:uri req)
@@ -32,17 +33,14 @@
           :else
           {:status 404})))
 
-(defonce !server (atom nil))
-(defonce !conns (atom #{}))
-
-(defn stop-server! [] (swap! !server #(do (when % (httpkit/server-stop! %)) nil)))
+(defn stop-server! [] (swap! state/!server #(do (when % (httpkit/server-stop! %)) nil)))
 
 (defn start-server! [inject]
   (stop-server!)
-  (reset! !server (httpkit/run-server (comp #'handler inject)
+  (reset! state/!server (httpkit/run-server (comp #'handler inject)
                                       {:legacy-return-value? false
                                        :port 7799})))
 
 (defn browse! [inject]
-  (when-not @!server (start-server! inject))
+  (when-not @state/!server (start-server! inject))
   (clojure.java.browse/browse-url "http://localhost:7799"))
