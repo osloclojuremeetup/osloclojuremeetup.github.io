@@ -64,11 +64,10 @@
        (spit (fs/file "build" file)
              (str "<!DOCTYPE html>\n"
                   (replicant.string/render (render db)))))
-     (doseq [{:keys [path]} assets]
+     (doseq [{:keys [path]} assets/assets]
        (let [target (fs/file "build" path)]
          (fs/create-dirs (fs/parent target))
          (fs/copy path target))))))
-
 
 (comment
   (set! *print-namespace-maps* false)
