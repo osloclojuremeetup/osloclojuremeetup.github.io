@@ -1,0 +1,8 @@
+body {
+    margin: 0 auto;
+}
+
+#meetups {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}

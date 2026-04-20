@@ -1,0 +1,16 @@
+{:paths ["src" "test"]
+ :deps {babashka/fs {:mvn/version "0.5.32"}
+        com.datomic/peer {:mvn/version "1.0.7556"}
+        http-kit/http-kit {:mvn/version "2.9.0-beta3"}
+        io.github.nextjournal/markdown {:mvn/version "0.7.225"}
+        io.github.teodorlu/windborn.asset {:git/url "https://github.com/teodorlu/windborn.asset"
+                                           :git/sha "98dea72cde6dc0dad7cd5cb4732fe2142820d9be"}
+        io.github.tonsky/clj-reload {:mvn/version "1.0.0"}
+        lambdaisland/kaocha {:mvn/version "1.91.1392"}
+        no.cjohansen/replicant {:mvn/version "2025.12.1"}
+        ring/ring-core {:mvn/version "1.15.4"}
+        dev.data-star.clojure/sdk {:mvn/version "1.0.0-RC8"}
+        dev.data-star.clojure/http-kit {:mvn/version "1.0.0-RC8"}
+        nubank/matcher-combinators {:mvn/version "3.10.0"}}
+ :aliases
+ {:kaocha {:main-opts ["-m" "kaocha.runner"]}}}

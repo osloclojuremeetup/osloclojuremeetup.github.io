@@ -1,0 +1,40 @@
+name: Test and build
+on: [push, pull_request]
+jobs:
+  test-build:
+    name: Test and Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+      - name: Install Java
+        uses: actions/setup-java@master
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: Install clojure tools
+        uses: DeLaGuardo/setup-clojure@master
+        with:
+          cli: latest
+      - name: Prepare deps
+        run: clojure -P
+      - name: Run tests
+        run: clojure -M:kaocha
+      - name: Build
+        run: clojure -X site/build
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs: test-build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

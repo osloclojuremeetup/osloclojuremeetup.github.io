@@ -1,0 +1,6 @@
+#{{:github/id "teodoran"
+   :person/name "Teodor Elstad"
+   :person/website {:site/url "https://teodoran.github.io/"
+                    :site/title "teodoran"}}
+  {:github/id "magnars"
+   :person/name "Magnar Sveen"}}
