@@ -3,4 +3,6 @@
    :person/website {:site/url "https://teodoran.github.io/"
                     :site/title "teodoran"}}
   {:github/id "magnars"
-   :person/name "Magnar Sveen"}}
+   :person/name "Magnar Sveen"}
+  {:github/id "daslu"
+   :person/name "Daniel Slutsky"}}

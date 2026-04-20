@@ -1,0 +1,5 @@
+{:meetup/date "2025-12-03"
+ :meetup/title "Data analytics and data visualization in Clojure"
+ :meetup/description "Did you know you can visualize large datasets and explore connections with graphs directly from a Clojure REPL? Come learn how! Daniel Slutsky has driven and contributed to many of the tools Clojure developers and data scientists use every day. We are lucky to have Daniel visiting Oslo in December! Come experience live programming with the Clojure stack for data science with tables, graphs and Clojure notebooks."
+ :meetup/agenda [{:talk/title "Data analytics and data visualization in Clojure"
+                  :talk/speakers #{{:github/id "daslu"}}}]}
