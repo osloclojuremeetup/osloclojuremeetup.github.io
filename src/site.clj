@@ -17,7 +17,9 @@
 
 (defn load-meetups []
   (->> (fs/glob "meetups" "*.edn")
-       (map load-edn)))
+       (map load-edn)
+       (sort-by :meetup/date)
+       reverse))
 
 (defn load-speakers []
   (load-edn "speakers.edn"))
