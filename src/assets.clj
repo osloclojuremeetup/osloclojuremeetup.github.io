@@ -11,7 +11,10 @@
      :uri "/css/props.css"}
     {:id :assets.style/color
      :path "css/color.css"
-     :uri "/css/color.css"}})
+     :uri "/css/color.css"}
+    {:id :assets.style/type
+     :path "css/type.css"
+     :uri "/css/type.css"}})
 
 (reset! state/!asset-definitions assets)
 
