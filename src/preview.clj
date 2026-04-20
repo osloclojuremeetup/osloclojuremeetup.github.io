@@ -25,10 +25,7 @@
 
           (and (= (:request-method req) :get)
                (contains? (:site/uri->asset req) uri))
-          (ring.middleware.content-type/content-type-response
-           {:status 200
-            :body (fs/file (get-in req [:site/uri->asset uri :path]))}
-           req)
+          (get @state/!asset-data (get-in (:site/uri->asset req) [uri :path]))
 
           :else
           {:status 404})))
