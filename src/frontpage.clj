@@ -1,5 +1,6 @@
 (ns frontpage
   (:require
+   [assets]
    [clojure.string :as str]
    [db]
    [starfederation.datastar.clojure.api :as d*]))
@@ -20,8 +21,11 @@
 (defn headers []
   (list
    [:meta {:charset "utf-8"}]
-   [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
-   [:link {:href "/css/layout.css" :rel "stylesheet"}]))
+   [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]))
+
+(defn asset-headers []
+  (list
+   (assets/link (assets/by-id :assets.style/layout))))
 
 (defn dev-headers []
   (list
@@ -46,14 +50,17 @@
 (defn render-static [db]
   [:html
    [:head
-    (headers)]
+    (headers)
+    (asset-headers)]
    [:body {:style {:max-width "1000px"}}
     (render-body db)]])
 
 (defn render-dev [db]
   [:html
    [:head
-    (list (headers) (dev-headers))]
+    (list (headers)
+          (asset-headers)
+          (dev-headers))]
    [:body {:style {:max-width "1000px"}}
     [:span {:data-init "@get('/sse')" :style {:display "none"}}]
     [:div#morph
