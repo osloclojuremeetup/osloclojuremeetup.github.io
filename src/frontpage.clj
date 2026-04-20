@@ -25,7 +25,9 @@
 
 (defn asset-headers []
   (list
-   (assets/link (assets/by-id :assets.style/layout))))
+   (assets/link (assets/by-id :assets.style/layout))
+   (assets/link (assets/by-id :assets.style/props))
+   (assets/link (assets/by-id :assets.style/color))))
 
 (defn dev-headers []
   (list

@@ -1,0 +1,8 @@
+body {
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+
+a {
+    color: var(--link-color);
+}

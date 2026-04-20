@@ -5,7 +5,15 @@
 (def assets
   #{{:id :assets.style/layout
      :path "css/layout.css"
-     :uri "/css/layout.css"}})
+     :uri "/css/layout.css"}
+    {:id :assets.style/props
+     :path "css/props.css"
+     :uri "/css/props.css"}
+    {:id :assets.style/color
+     :path "css/color.css"
+     :uri "/css/color.css"}})
+
+(reset! state/!asset-definitions assets)
 
 (defn by [f]
   (into {}
