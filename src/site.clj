@@ -8,7 +8,8 @@
    [db]
    [frontpage]
    [preview]
-   [replicant.string]))
+   [replicant.string]
+   [dev]))
 
 (defn load-edn [path]
   (-> (fs/file path)
@@ -70,6 +71,8 @@
        (let [target (fs/file "build" path)]
          (fs/create-dirs (fs/parent target))
          (fs/copy path target))))))
+
+(dev/reload)
 
 (comment
   (set! *print-namespace-maps* false)
