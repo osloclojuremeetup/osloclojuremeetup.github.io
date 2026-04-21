@@ -42,3 +42,6 @@
                        (str "?sha1=" s)))
           :rel "stylesheet"}])
 
+(defn link-all [asset-id & more-ids]
+  (cons (link (by-id asset-id))
+        (map (comp link by-id) more-ids)))

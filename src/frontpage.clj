@@ -24,11 +24,10 @@
    [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]))
 
 (defn asset-headers []
-  (list
-   (assets/link (assets/by-id :assets.style/layout))
-   (assets/link (assets/by-id :assets.style/props))
-   (assets/link (assets/by-id :assets.style/color))
-   (assets/link (assets/by-id :assets.style/type))))
+  (assets/link-all :assets.style/layout
+                   :assets.style/props
+                   :assets.style/color
+                   :assets.style/type))
 
 (defn dev-headers []
   (list
