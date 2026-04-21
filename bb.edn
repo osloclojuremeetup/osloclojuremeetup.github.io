@@ -2,6 +2,7 @@
                                        :git/sha "175a4830925030c130e6b473a7d795f9b015731e"}}
  :tasks
  {:requires ([invoker.nvk :as nvk])
+  browse (shell "bb nvk lifecycle/browse!")
   nvk (apply nvk/-main *command-line-args*)
   nvk-reload (apply nvk/-main "reload" *command-line-args*)
   nvk-test (apply nvk/-main "test" *command-line-args*)}}
