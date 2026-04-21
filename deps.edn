@@ -11,6 +11,8 @@
         ring/ring-core {:mvn/version "1.15.4"}
         dev.data-star.clojure/sdk {:mvn/version "1.0.0-RC8"}
         dev.data-star.clojure/http-kit {:mvn/version "1.0.0-RC8"}
-        nubank/matcher-combinators {:mvn/version "3.10.0"}}
+        nubank/matcher-combinators {:mvn/version "3.10.0"}
+        io.github.filipesilva/invoker {:git/url "https://github.com/filipesilva/invoker"
+                                       :git/sha "175a4830925030c130e6b473a7d795f9b015731e"}}
  :aliases
  {:kaocha {:main-opts ["-m" "kaocha.runner"]}}}
