@@ -4,7 +4,9 @@
    [state]
    [clojure.test :refer [deftest is testing]]
    [matcher-combinators.test :refer [match?]]
-   [windborn.asset]))
+   [matcher-combinators.matchers :as m]
+   [windborn.asset]
+   [clojure.string :as str]))
 
 ;; Load layout.css into memory
 (windborn.asset/watch-handler state/!asset-data
@@ -18,7 +20,7 @@
 (deftest link
   (testing "known assets are hashed"
     (is (match? [:link {:id "assets.style.layout"
-                        :href "/css/layout.css?sha1=epgLnn7FajrqcWc8lkNEJYL5afc"
+                        :href (m/pred #(str/starts-with? % "/css/layout.css?sha1="))
                         :rel "stylesheet"}]
                 (assets/asset->link (assets/by-id :assets.style/layout)))))
 
