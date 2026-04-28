@@ -80,8 +80,6 @@
   (build)
   (fs/glob "build" "**/*")
 
-  
-
   ((requiring-resolve 'clojure.repl.deps/sync-deps))
   ((requiring-resolve 'clj-reload.core/reload) {:only :all})
 
