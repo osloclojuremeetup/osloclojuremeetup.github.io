@@ -1,10 +1,7 @@
 (ns ^:clj-reload/no-reload state)
 
-;; Server
+;; Server & SSE sessions
 (defonce !server (atom nil))
-(defonce !conns (atom #{}))
-
-;; SSE connections
 (defonce !sessions (atom nil))
 
 ;; Asset watch
