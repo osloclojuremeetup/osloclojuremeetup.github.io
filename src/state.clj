@@ -12,3 +12,8 @@
 ;; Dev reloads
 (defonce !asset-headers (atom nil))
 (defonce !db (atom nil))
+
+(comment
+  (update-vals @!asset-data #(dissoc % :body))
+
+  )
