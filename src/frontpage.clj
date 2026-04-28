@@ -2,10 +2,10 @@
   (:require
    [assets]
    [clojure.string :as str]
-   [state]
-   [sse]
    [db]
-   [starfederation.datastar.clojure.api :as d*]))
+   [sse]
+   [starfederation.datastar.clojure.api :as d*]
+   [state]))
 
 (defn render-meetup [meetup]
   (list

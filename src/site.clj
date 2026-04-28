@@ -3,13 +3,13 @@
    [assets]
    [babashka.fs :as fs]
    [clojure.edn :as edn]
-   [state]
    [clojure.java.browse]
    [datomic.api :as d]
    [db]
    [frontpage]
    [preview]
-   [replicant.string]))
+   [replicant.string]
+   [state]))
 
 (defn load-edn [path]
   (-> (fs/file path)
