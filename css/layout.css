@@ -4,5 +4,19 @@ body {
 
 #meetups {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 7rem 4fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+#meetups > .date {
+    text-align: right;
+}
+
+#meetups .talk {
+    margin-top: 0.5rem;
+}
+
+#meetups .reference {
+    margin-left: 0.5rem;
 }

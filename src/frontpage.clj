@@ -7,16 +7,21 @@
 
 (defn render-meetup [meetup]
   (list
-   [:div (:meetup/date meetup)]
+   [:div.date (:meetup/date meetup)]
    [:div
     [:div [:strong (:meetup/title meetup)]]
-    [:div (:meetup/description meetup)]
+    ;[:div (:meetup/description meetup)]
     (for [talk (->> (:meetup/agenda meetup)
                     (sort-by :agenda/number))]
-      [:div [:strong (:talk/title talk)]
-       " ("
-       (str/join ", " (keep :person/name (:talk/speakers talk)))
-       ")"])]))
+      [:div.talk
+       [:div [:emf (:talk/title talk)]
+        " ("
+        (str/join ", " (keep :person/name (:talk/speakers talk)))
+        ")"]
+       (for [ref (:talk/references talk)]
+         [:div.reference
+          [:a {:href (:reference/url ref)}
+           (:reference/label ref)]])])]))
 
 (defn headers []
   (list
