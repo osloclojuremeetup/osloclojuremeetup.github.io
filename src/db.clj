@@ -42,6 +42,16 @@
     :db/cardinality :db.cardinality/many}
    {:db/ident :talk/title
     :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one}
+   {:db/ident :talk/references
+    :db/valueType :db.type/ref
+    :db/cardinality :db.cardinality/many
+    :db/isComponent true}
+   {:db/ident :reference/label
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one}
+   {:db/ident :reference/url
+    :db/valueType :db.type/string
     :db/cardinality :db.cardinality/one}])
 
 (defn create-empty []

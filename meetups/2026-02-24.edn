@@ -2,6 +2,10 @@
  :meetup/title "Oslo Socially Functional Reboot: Functional Core / Imperative Shell"
  :meetup/description "Functional programming is more than map, filter and reduce: functional principles can improve your system design. More than that, this meetup marks the resurrection of Oslo Socially Functional! Back in the day, Bodil Stokke et al invited functionally minded people to discuss across language boundaries. We strive to pick up that torch. All functionally minded people are invited! And all functionally curious people too!"
  :meetup/agenda [{:talk/title "Funksjonell kjerne, imperativt skall: en arkitektur på vranga"
-                  :talk/speakers #{{:github/id "magnars"}}}
+                  :talk/speakers #{{:github/id "magnars"}}
+                  :talk/references #{{:reference/label "Funksjonell kjerne, imperativt skall: en arkitektur på vranga (JavaZone 2025)"
+                                      :reference/url "https://vimeo.com/1115860138"}}}
                  {:talk/title "Can Conflict-free Replicated Data-Types teach us anything about API-design?"
-                  :talk/speakers #{{:github/id "teodoran"}}}]}
+                  :talk/speakers #{{:github/id "teodoran"}}
+                  :talk/references #{{:reference/label "A comprehensive study of Convergent and Commutative Replicated Data Types"
+                                      :reference/url "https://inria.hal.science/inria-00555588v1/document"}}}]}
