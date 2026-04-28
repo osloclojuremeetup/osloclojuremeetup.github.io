@@ -7,7 +7,8 @@
    [windborn.asset]))
 
 (defn start-assetwatch []
-  (windborn.asset/watch state/!asset-definitions state/!asset-watcher state/!asset-data #'sse/push-assets!))
+  (windborn.asset/watch state/!asset-definitions state/!asset-watcher state/!asset-data
+                        #((resolve 'sse/push-assets!))))
 
 (defn stop-assetwatch []
   (windborn.asset/unwatch state/!asset-definitions state/!asset-watcher state/!asset-data))
