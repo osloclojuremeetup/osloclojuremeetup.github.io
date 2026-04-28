@@ -30,18 +30,18 @@
   [{:keys [id] :as _asset}]
   (str (namespace id) "." (name id)))
 
-(defn sha1
+(defn asset->sha1
   [{:keys [path] :as _asset}]
   (get-in @state/!asset-data [path :sha1]))
 
-(defn link
+(defn asset->link
   [{:keys [uri] :as asset}]
   [:link {:id (asset->dom-id asset)
           :href (str uri
-                     (when-let [s (sha1 asset)]
+                     (when-let [s (asset->sha1 asset)]
                        (str "?sha1=" s)))
           :rel "stylesheet"}])
 
 (defn link-all [asset-id & more-ids]
-  (cons (link (by-id asset-id))
-        (map (comp link by-id) more-ids)))
+  (cons (asset->link (by-id asset-id))
+        (map (comp asset->link by-id) more-ids)))
