@@ -28,7 +28,7 @@
   (push-all! (str (replicant.string/render hiccup))))
 
 (defn push-assets! []
-  (push-hiccup! (frontpage/asset-headers)))
+  (run! push-hiccup! (frontpage/asset-headers)))
 
 (comment
   (push-hiccup! [:h1#morph "🥳🎉🤩"])
