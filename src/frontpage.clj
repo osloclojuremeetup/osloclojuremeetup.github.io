@@ -2,6 +2,8 @@
   (:require
    [assets]
    [clojure.string :as str]
+   [state]
+   [sse]
    [db]
    [starfederation.datastar.clojure.api :as d*]))
 
@@ -33,6 +35,7 @@
                    :assets.style/props
                    :assets.style/color
                    :assets.style/type))
+(reset! state/!asset-headers (asset-headers))
 
 (defn dev-headers []
   (list
@@ -72,3 +75,6 @@
     [:span {:data-init "@get('/sse')" :style {:display "none"}}]
     [:div#morph
      (render-body db)]]])
+
+(when-let [db @state/!db]
+  (sse/push-hiccup! [:div#morph (render-body db)]))

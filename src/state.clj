@@ -11,3 +11,7 @@
 (defonce !asset-definitions (atom nil))
 (defonce !asset-watcher (atom nil))
 (defonce !asset-data (atom {}))
+
+;; Dev reloads
+(defonce !asset-headers (atom nil))
+(defonce !db (atom nil))

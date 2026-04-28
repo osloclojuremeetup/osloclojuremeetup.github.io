@@ -1,6 +1,5 @@
 (ns sse
   (:require
-   [frontpage]
    [replicant.string]
    [starfederation.datastar.clojure.adapter.http-kit
     :refer [->sse-response on-close on-open]]
@@ -28,7 +27,7 @@
   (push-all! (str (replicant.string/render hiccup))))
 
 (defn push-assets! []
-  (run! push-hiccup! (frontpage/asset-headers)))
+  (run! push-hiccup! @state/!asset-headers))
 
 (comment
   (push-hiccup! [:h1#morph "🥳🎉🤩"])

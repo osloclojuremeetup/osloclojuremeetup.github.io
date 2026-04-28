@@ -3,6 +3,7 @@
    [assets]
    [babashka.fs :as fs]
    [clojure.edn :as edn]
+   [state]
    [clojure.java.browse]
    [datomic.api :as d]
    [db]
@@ -47,6 +48,7 @@
        (into {})))
 
 (def db (create-db))
+(reset! state/!db db)
 
 (defn inject [req]
   (-> req
