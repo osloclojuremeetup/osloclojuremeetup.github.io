@@ -4,7 +4,6 @@
    [clojure.string :as str]
    [db]
    [sse]
-   [starfederation.datastar.clojure.api :as d*]
    [state]))
 
 (defn render-meetup [meetup]
@@ -39,7 +38,7 @@
 
 (defn dev-headers []
   (list
-   [:script {:type "module" :src d*/CDN-url}]))
+   [:script {:type "module" :src "https://cdn.jsdelivr.net/gh/starfederation/datastar@v1.0.1/bundles/datastar.js"}]))
 
 (defn render-body [db]
   (list
