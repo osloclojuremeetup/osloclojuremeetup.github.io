@@ -69,6 +69,7 @@
    [:head
     (list (headers)
           (asset-headers)
+          [:link {:id "autocss" :href "/autocss" :rel "stylesheet"}]
           (dev-headers))]
    [:body {:style {:max-width "1000px"}}
     [:span {:data-init "@get('/sse')" :style {:display "none"}}]
