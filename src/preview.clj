@@ -18,8 +18,11 @@
 "})
 
 (defn serve-asset [{:as req :keys [uri]}]
-  (swap! reqs conj req)
-  (get @state/!asset-data (get-in (:site/uri->asset req) [uri :path])))
+  (let [{:strs [sha1]} (:params req)
+        asset (get (:site/uri->asset req) uri)
+        candidate (get @state/!asset-data (:path asset))]
+    (when (= sha1 (:sha1 candidate))
+      candidate)))
 
 (defn handler [req]
   (let [uri (:uri req)
@@ -38,7 +41,7 @@
 
           (and (= (:request-method req) :get)
                (contains? (:site/uri->asset req) uri))
-          (get @state/!asset-data (get-in (:site/uri->asset req) [uri :path]))
+          (serve-asset req)
 
           (= ((juxt :request-method :uri) req)
              [:get "/autocss"])
