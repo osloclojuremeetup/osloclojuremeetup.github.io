@@ -16,17 +16,20 @@
 (defn start-server []
   (preview/start-server! #'site/inject))
 
-(defn browse! []
+(defn browse {:export true} []
   (start-assetwatch)
   (preview/browse! #'site/inject))
 
-(defn start []
+(defn start {:export true} []
   (start-assetwatch)
   (start-server))
 
-(defn stop []
-  (stop-assetwatch))
+(defn stop {:export true} []
+  (stop-assetwatch)
+  (preview/stop-server!))
 
 (comment
-  (browse!)
+  (browse)
+  (stop)
+  (start)
   )
