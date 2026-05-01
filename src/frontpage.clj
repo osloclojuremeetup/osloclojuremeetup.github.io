@@ -4,6 +4,7 @@
    [clojure.string :as str]
    [db]
    [sse]
+   [starfederation.datastar.clojure.api :as d*]
    [state]))
 
 (defn render-meetup [meetup]
@@ -11,7 +12,7 @@
    [:div.date (:meetup/date meetup)]
    [:div
     [:div [:strong (:meetup/title meetup)]]
-    ;[:div (:meetup/description meetup)]
+    ;; [:div (:meetup/description meetup)]
     (for [talk (->> (:meetup/agenda meetup)
                     (sort-by :agenda/number))]
       [:div.talk
@@ -38,7 +39,7 @@
 
 (defn dev-headers []
   (list
-   [:script {:type "module" :src "https://cdn.jsdelivr.net/gh/starfederation/datastar@v1.0.1/bundles/datastar.js"}]))
+   [:script {:type "module" :src d*/CDN-url}]))
 
 (defn render-body [db]
   (list

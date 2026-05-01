@@ -1,8 +1,8 @@
 {:paths ["src" "test"]
  :deps {babashka/fs {:mvn/version "0.5.33"}
-        com.datomic/peer {:mvn/version "1.0.7556"}
-        dev.data-star.clojure/http-kit {:mvn/version "1.0.0-RC8"}
-        dev.data-star.clojure/sdk {:mvn/version "1.0.0-RC8"}
+        com.datomic/peer {:mvn/version "1.0.7622"}
+        dev.data-star.clojure/http-kit {:mvn/version "1.0.0-RC9"}
+        dev.data-star.clojure/sdk {:mvn/version "1.0.0-RC9"}
         http-kit/http-kit {:mvn/version "2.9.0-beta3"}
         io.github.filipesilva/invoker {:git/url "https://github.com/filipesilva/invoker"
                                        :git/sha "175a4830925030c130e6b473a7d795f9b015731e"}
