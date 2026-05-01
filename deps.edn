@@ -15,4 +15,7 @@
         nubank/matcher-combinators {:mvn/version "3.10.0"}
         ring/ring-core {:mvn/version "1.15.4"}}
  :aliases
- {:kaocha {:main-opts ["-m" "kaocha.runner"]}}}
+ {:kaocha {:main-opts ["-m" "kaocha.runner"]}
+  :windborn-dev {:replace-deps
+                 {io.github.teodorlu/windborn.asset
+                  {:local/root "../../teodorlu/windborn.asset"}}}}}
