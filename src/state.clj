@@ -1,4 +1,5 @@
-(ns ^:clj-reload/no-reload state)
+(ns ^:clj-reload/no-reload state
+  (:require [clojure.string :as str]))
 
 ;; Server & SSE sessions
 (defonce !server (atom nil))
@@ -14,6 +15,8 @@
 (defonce !db (atom nil))
 
 (comment
-  (update-vals @!asset-data #(dissoc % :body))
+  ;; Inspect checksums
+  (->> @!asset-data
+       (mapv (juxt first (comp #(subs % 0 5) :sha1 second))))
 
   )
