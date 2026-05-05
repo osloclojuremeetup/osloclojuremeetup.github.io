@@ -1,0 +1,5 @@
+{:meetup/date "2021-10-27"
+ :meetup/title "A Gentle Introduction to Clojure"
+ :meetup/description "Emil Bengtsson is the CTO at Inortt. In this talk, he will give us a high-level introduction to Clojure. This talk is especially suited for curious programmers with no previous experience in Lisp or Clojure. This will give you some insight into what Clojure has to offer. This talk will be great for newcomers!"
+ :meetup/agenda [{:talk/title "A Gentle Introduction to Clojure"
+                  :talk/speakers #{{:github/id "emil0r"}}}]}

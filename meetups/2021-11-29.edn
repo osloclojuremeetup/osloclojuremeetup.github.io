@@ -1,0 +1,5 @@
+{:meetup/date "2021-11-29"
+ :meetup/title "Introduction to Creating Web Apps with Fulcro"
+ :meetup/description "In December, Jakub Holy will be giving a workshop on creating web apps with Fulcro at the reClojure 2021 virtual conference. He would like to give us a preview of this workshop. This will give you an opportunity to see this talk, and we can provide Jakub with feedback to make his talk as good as possible."
+ :meetup/agenda [{:talk/title "Introduction to Creating Web Apps with Fulcro"
+                  :talk/speakers #{{:github/id "holyjak"}}}]}

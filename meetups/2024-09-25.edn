@@ -1,0 +1,5 @@
+{:meetup/date "2024-09-25"
+ :meetup/title "Asami vs Datomic, what's the difference"
+ :meetup/description "Datomic should be known to most of us, but Asami? Asami is also a graph database developed by Paula Gearon. In this meetup we'll let her talk about her observations on the differences about the two databases."
+ :meetup/agenda [{:talk/title "Asami vs Datomic, what's the difference"
+                  :talk/speakers #{{:github/id "quoll"}}}]}

@@ -1,8 +1,22 @@
-#{{:github/id "teodoran"
+#{{:github/id "andersfurseth"
+   :person/name "Anders Furseth"}
+  {:github/id "cjohansen"
+   :person/name "Christian Johansen"}
+  {:github/id "daslu"
+   :person/name "Daniel Slutsky"}
+  {:github/id "emil0r"
+   :person/name "Emil Bengtsson"}
+  {:github/id "magnars"
+   :person/name "Magnar Sveen"}
+  {:github/id "quoll"
+   :person/name "Paula Gearon"}
+  {:github/id "teodoran"
    :person/name "Teodor Elstad"
    :person/website {:site/url "https://teodoran.github.io/"
                     :site/title "teodoran"}}
-  {:github/id "magnars"
-   :person/name "Magnar Sveen"}
-  {:github/id "daslu"
-   :person/name "Daniel Slutsky"}}
+  {:github/id "teodorlu"
+   :person/name "Teodor Heggelund"}
+  {:github/id "leifericf"
+   :person/name "Leif Eric Fredheim"}
+  {:github/id "holyjak"
+   :person/name "Jakub Holy"}}

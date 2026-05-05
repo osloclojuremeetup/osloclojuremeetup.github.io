@@ -1,0 +1,9 @@
+{:meetup/date "2023-06-01"
+ :meetup/title "Datomic: Hva, hvorfor og hvordan"
+ :meetup/description "Datomic er en moderne database med noen interessante karakteristikker. Datomic-lisensen er nå gratis i bruk for alle formål. Vi viser hva Datomic er, hvordan man jobber med den, og hvordan man drifter den."
+ :meetup/agenda [{:talk/title "Datomic i praksis: prosjekter og eksempler"
+                  :talk/speakers #{{:github/id "magnars"}}}
+                 {:talk/title "Datamodellering og datalog i Datomic"
+                  :talk/speakers #{{:github/id "cjohansen"}}}
+                 {:talk/title "Datomic i produksjon: drift og skalering"
+                  :talk/speakers #{{:github/id "andersfurseth"}}}]}

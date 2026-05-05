@@ -1,0 +1,5 @@
+{:meetup/date "2024-11-13"
+ :meetup/title "From JVM to JS: Implementing Math Functions in ClojureScript"
+ :meetup/description "This talk explores the implementation of Java's math functions in ClojureScript, aiming for functional parity with Clojure's math operations. We'll examine the intricacies of IEEE 754 floating point operations, the challenges of bitwise operations in JavaScript, and approaches for thorough cross-environment testing. The presentation will cover how low-level mathematical operations can be implemented in ClojureScript, and the insights gained about the compiler and ecosystem. The talk will also highlight the collaborative process with ClojureScript maintainers, providing a look at contributing to a core language project. This presentation offers perspectives on language internals, precise numerical computations, testing techniques, and the community-driven nature of open-source development."
+ :meetup/agenda [{:talk/title "From JVM to JS: Implementing Math Functions in ClojureScript"
+                  :talk/speakers #{{:github/id "quoll"}}}]}

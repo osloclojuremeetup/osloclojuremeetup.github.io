@@ -1,0 +1,5 @@
+{:meetup/date "2022-02-23"
+ :meetup/title "Getting Started with Clojure"
+ :meetup/description "This workshop is intended for complete beginners. No prior knowledge or experience with Clojure is required. Prior experience with programming (any language) will be helpful, but is not required. The most important thing is that you participate with an open mind, and an eagerness to learn."
+ :meetup/agenda [{:talk/title "Getting Started with Clojure"
+                  :talk/speakers #{{:github/id "leifericf"}}}]}

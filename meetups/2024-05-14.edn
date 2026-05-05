@@ -1,0 +1,9 @@
+{:meetup/date "2024-05-14"
+ :meetup/title "Babashka i praksis"
+ :meetup/description "Babashka er en rask Clojure-runtime som egner seg godt til scripting. En JVM tar tid å starte. Et Bash-script må skrives i Bash. Et Babashka-script er knallkjapt å starte, du kan skrive scriptet i Clojure, du kan koble til en REPL, og du kan bruke Clojure-biblioteker."
+ :meetup/agenda [{:talk/title "Babashka i praksis"
+                  :talk/speakers #{{:github/id "teodorlu"}}}
+                 {:talk/title "Bubblegum CLIs"
+                  :talk/speakers #{{:github/id "emil0r"}}}
+                 {:talk/title "Live parprogrammering"
+                  :talk/speakers #{{:github/id "magnars"} {:github/id "cjohansen"}}}]}

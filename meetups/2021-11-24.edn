@@ -1,0 +1,5 @@
+{:meetup/date "2021-11-24"
+ :meetup/title "Experience Interactive Programming (with Clojure)"
+ :meetup/description "Jakub Holy is a full-stack ClojureScript developer at Ardoq. He has designed this workshop to allow us to experience what \"interactive development\" - developing a running application, interacting with it from code, getting immediate feedback - is about. The workshop uses Clojure but no prior knowledge of the language is expected."
+ :meetup/agenda [{:talk/title "Experience Interactive Programming (with Clojure)"
+                  :talk/speakers #{{:github/id "holyjak"}}}]}
