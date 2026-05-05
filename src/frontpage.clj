@@ -56,6 +56,7 @@
    [:h2 "Meetups"]
    [:div#meetups
     (->> (db/find-meetups db)
+         (sort-by :meetup/date #(compare %2 %1))
          (map render-meetup))]))
 
 (defn render-static [db]
