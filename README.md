@@ -60,8 +60,8 @@ Ellers har hvert meetup samme form:
  :meetup/title "Din meetup tittel"
  :meetup/description "En kort beskrivelse"
  :meetup/agenda [{:talk/title "En talk"
-                  :talk/speakers #{{:github/id "teodorlu"}
-                                   {:github/id "SophieBosio"}}}]}
+                  :talk/speakers #{ {:github/id "teodorlu"}
+                                    {:github/id "SophieBosio"} }}]}
 ```
 
 `:meetup/date` er datoen meetupen skjedde.
