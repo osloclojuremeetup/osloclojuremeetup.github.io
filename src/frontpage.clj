@@ -16,7 +16,7 @@
     (for [talk (->> (:meetup/agenda meetup)
                     (sort-by :agenda/number))]
       [:div.talk
-       [:div [:emf (:talk/title talk)]
+       [:div [:em (:talk/title talk)]
         " ("
         (str/join ", " (keep :person/name (:talk/speakers talk)))
         ")"]
