@@ -4,8 +4,7 @@
    [state]
    [clojure.test :refer [deftest is]]
    [matcher-combinators.test :refer [match?]]
-   [matcher-combinators.matchers :as m]
-   [windborn.asset]))
+   [matcher-combinators.matchers :as m]))
 
 (deftest asset->dom-id
   (is (= "assets.style.layout"
