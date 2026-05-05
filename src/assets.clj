@@ -16,8 +16,6 @@
      :path "css/type.css"
      :uri "/css/type.css"}})
 
-(reset! state/!asset-definitions assets)
-
 (defn by [f]
   (into {}
         (map (juxt f identity))
@@ -25,26 +23,17 @@
 
 (def by-uri (by :uri))
 (def by-id (by :id))
+(def by-path (by :path))
 
 (defn asset->dom-id
   [{:keys [id] :as _asset}]
   (str (namespace id) "." (name id)))
 
-(defn asset->sha1
-  [{:keys [path] :as _asset}]
-  (get-in @state/!asset-data [path :sha1]))
-
 (defn asset->link
   [{:keys [uri] :as asset}]
   [:link {:id (asset->dom-id asset)
-          :href (str uri
-                     (when-let [s (asset->sha1 asset)]
-                       (str "?sha1=" s)))
+          :href uri
           :rel "stylesheet"}])
-
-(defn link-all [asset-id & more-ids]
-  (cons (asset->link (by-id asset-id))
-        (map (comp asset->link by-id) more-ids)))
 
 (defn load-one [asset]
   (condp = (namespace (:id asset))

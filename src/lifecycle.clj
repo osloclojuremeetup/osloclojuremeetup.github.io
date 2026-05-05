@@ -1,31 +1,21 @@
 (ns lifecycle
   (:require
-   [preview]
+   [lifecycle.preview :as preview]
+   [lifecycle.assetwatch :as assetwatch]
+   [assets]
    [site]
    [sse]
-   [state]
-   [windborn.asset]))
-
-(defn start-assetwatch []
-  (windborn.asset/watch state/!asset-definitions state/!asset-watcher state/!asset-data
-                        #((resolve 'sse/push-assets!))))
-
-(defn stop-assetwatch []
-  (windborn.asset/unwatch state/!asset-definitions state/!asset-watcher state/!asset-data))
-
-(defn start-server []
-  (preview/start-server! #'site/inject))
+   [state]))
 
 (defn browse {:export true} []
-  (start-assetwatch)
+  (assetwatch/start assets/assets)
   (preview/browse! #'site/inject))
 
 (defn start {:export true} []
-  (start-assetwatch)
-  (start-server))
+  (assetwatch/stop)
+  (preview/start-server! #'site/inject))
 
 (defn stop {:export true} []
-  (stop-assetwatch)
   (preview/stop-server!))
 
 (comment

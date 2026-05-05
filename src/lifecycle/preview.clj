@@ -1,4 +1,4 @@
-(ns preview
+(ns lifecycle.preview
   (:require
    [clojure.java.browse]
    [org.httpkit.server :as httpkit]
@@ -8,25 +8,8 @@
    [sse]
    [state]))
 
-(defn autocss [req]
-  {:status 200
-   :headers {"Content-Type" "text/css"}
-   :body
-   "#melding {
-     color: crimson
-  }
-"})
-
-(defn serve-asset [{:as req :keys [uri]}]
-  (let [{:strs [sha1]} (:params req)
-        asset (get (:site/uri->asset req) uri)
-        candidate (get @state/!asset-data (:path asset))]
-    (when (= sha1 (:sha1 candidate))
-      candidate)))
-
 (defn handler [req]
-  (let [uri (:uri req)
-        pages (:site/pages req)
+  (let [pages (:site/pages req)
         db (:site/db req)]
     (cond (and (= (:request-method req) :get)
                (contains? pages (:uri req)))
@@ -38,14 +21,6 @@
           (and (= (:request-method req) :get)
                (= "/sse" (:uri req)))
           (sse/handler req)
-
-          (and (= (:request-method req) :get)
-               (contains? (:site/uri->asset req) uri))
-          (serve-asset req)
-
-          (= ((juxt :request-method :uri) req)
-             [:get "/autocss"])
-          (autocss req)
 
           :else
           {:status 404})))

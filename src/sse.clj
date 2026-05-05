@@ -5,8 +5,7 @@
    [starfederation.datastar.clojure.adapter.http-kit
     :refer [->sse-response on-close on-open]]
    [starfederation.datastar.clojure.api :as d*]
-   [state]
-   [windborn.asset]))
+   [state]))
 
 (defn session-open [id {:keys [sse]}]
   (swap! state/!sessions assoc id {:sse sse}))
@@ -27,12 +26,13 @@
 (defn push-hiccup! [hiccup]
   (push-all! (str (replicant.string/render hiccup))))
 
-(defn push-assets! []
-  (->> (map :id assets/assets)
-       (apply assets/load-all)
-       (run! push-hiccup!)))
+(defn push-asset! [path]
+  (let [asset (assets/by-path path)]
+    (push-hiccup! (assets/load-one asset))
+    [:pushed (:id asset)]))
 
 (comment
   (push-hiccup! [:h1#morph "🥳🎉🤩"])
+  (push-asset "css/layout.css")
 
   :-)
