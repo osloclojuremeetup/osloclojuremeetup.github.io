@@ -1,4 +1,6 @@
-#{{:github/id "andersfurseth"
+#{{:github/id "PEZ"
+   :person/name "Peter Strömberg"}
+  {:github/id "andersfurseth"
    :person/name "Anders Furseth"}
   {:github/id "cjohansen"
    :person/name "Christian Johansen"}
@@ -6,6 +8,10 @@
    :person/name "Daniel Slutsky"}
   {:github/id "emil0r"
    :person/name "Emil Bengtsson"}
+  {:github/id "holyjak"
+   :person/name "Jakub Holy"}
+  {:github/id "leifericf"
+   :person/name "Leif Eric Fredheim"}
   {:github/id "magnars"
    :person/name "Magnar Sveen"}
   {:github/id "quoll"
@@ -15,8 +21,4 @@
    :person/website {:site/url "https://teodoran.github.io/"
                     :site/title "teodoran"}}
   {:github/id "teodorlu"
-   :person/name "Teodor Heggelund"}
-  {:github/id "leifericf"
-   :person/name "Leif Eric Fredheim"}
-  {:github/id "holyjak"
-   :person/name "Jakub Holy"}}
+   :person/name "Teodor Heggelund"}}

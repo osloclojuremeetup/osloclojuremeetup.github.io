@@ -6,4 +6,6 @@
                  {:talk/title "Bubblegum CLIs"
                   :talk/speakers #{{:github/id "emil0r"}}}
                  {:talk/title "Live parprogrammering"
-                  :talk/speakers #{{:github/id "magnars"} {:github/id "cjohansen"}}}]}
+                  :talk/speakers #{{:github/id "cjohansen"}
+                                   {:github/id "teodorlu"}
+                                   {:github/id "PEZ"}}}]}
