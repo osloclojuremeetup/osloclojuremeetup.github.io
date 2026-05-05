@@ -82,3 +82,15 @@
 
 (when-let [db @state/!db]
   (sse/push-hiccup! [:div#morph (render-body db)]))
+
+(comment
+  (def headers @state/!asset-headers)
+  (def header->id #(some-> % second :id))
+  (= "assets.style.layout" (-> headers first header->id))
+
+  (-> (->> @state/!asset-headers
+           (filter (comp #{"assets.style.layout"} header->id))
+           first)
+      (get 2)
+      (str/split-lines))
+  )
