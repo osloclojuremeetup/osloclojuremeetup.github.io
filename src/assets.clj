@@ -49,8 +49,9 @@
 (defn load-one [asset]
   (condp = (namespace (:id asset))
     "assets.style"
-    [:style {:id (asset->dom-id asset)}
-     (slurp (:path asset))]
+    [:style {:id (asset->dom-id asset)
+             :innerHTML (slurp (:path asset))}]
+
     nil))
 
 (defn load-all [asset-id & more-ids]

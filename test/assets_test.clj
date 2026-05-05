@@ -30,3 +30,10 @@
                         :rel "stylesheet"}]
                 (assets/asset->link {:id :assets.style/does-not-exist
                                      :uri "/css/bogus.css"})))))
+
+(deftest load-one
+  (is (match? [:style
+               {:id "assets.style.layout"
+                :innerHTML (m/pred string?)}]
+              (assets/load-one (assets/by-id :assets.style/layout)))))
+
