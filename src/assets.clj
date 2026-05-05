@@ -45,3 +45,14 @@
 (defn link-all [asset-id & more-ids]
   (cons (asset->link (by-id asset-id))
         (map (comp asset->link by-id) more-ids)))
+
+(defn load-one [asset]
+  (condp = (namespace (:id asset))
+    "assets.style"
+    [:style {:id (asset->dom-id asset)}
+     (slurp (:path asset))]
+    nil))
+
+(defn load-all [asset-id & more-ids]
+  (cons (load-one (by-id asset-id))
+        (map (comp load-one by-id) more-ids)))

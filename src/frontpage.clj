@@ -31,7 +31,7 @@
    [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]))
 
 (defn asset-headers []
-  (assets/link-all :assets.style/layout
+  (assets/load-all :assets.style/layout
                    :assets.style/props
                    :assets.style/color
                    :assets.style/type))
