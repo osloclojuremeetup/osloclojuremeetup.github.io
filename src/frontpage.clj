@@ -17,9 +17,8 @@
                     (sort-by :agenda/number))]
       [:div.talk
        [:div [:span (:talk/title talk)]
-        " ("
-        (str/join ", " (keep :person/name (:talk/speakers talk)))
-        ")"]
+        [:span.dot " • "]
+        [:span.speaker (str/join ", " (keep :person/name (:talk/speakers talk)))]]
        (for [ref (:talk/references talk)]
          [:div.reference
           [:a {:href (:reference/url ref)}
@@ -54,7 +53,7 @@
     [:a {:href "http://clojurians.net/"} "Clojurians-slacken"]
     "."]
 
-   [:h2 "Meetups 😊"]
+   [:h2 "Meetups"]
    [:div#meetups
     (->> (db/find-meetups db)
          (map render-meetup))]))
