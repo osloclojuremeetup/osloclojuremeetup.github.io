@@ -33,6 +33,6 @@
 
 (comment
   (push-hiccup! [:h1#morph "🥳🎉🤩"])
-  (push-asset "css/layout.css")
+  (push-asset! "css/layout.css")
 
   :-)
