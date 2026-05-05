@@ -9,14 +9,14 @@
 
 (defn render-meetup [meetup]
   (list
-   [:div.date (:meetup/date meetup)]
+   [:div.date [:span (:meetup/date meetup)]]
    [:div
-    [:div [:strong (:meetup/title meetup)]]
+    [:div.meetup-title [:strong (:meetup/title meetup)]]
     ;; [:div (:meetup/description meetup)]
     (for [talk (->> (:meetup/agenda meetup)
                     (sort-by :agenda/number))]
       [:div.talk
-       [:div [:em (:talk/title talk)]
+       [:div [:span (:talk/title talk)]
         " ("
         (str/join ", " (keep :person/name (:talk/speakers talk)))
         ")"]

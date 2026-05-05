@@ -2,4 +2,7 @@
   --bg-primary: black;
   --text-primary: #ffd1fa;
   --link-color: #a1dcff;
+  --divider-color: rgba(255, 209, 250, 0.2);
+  --badge-bg: rgba(255, 209, 250, 0.2);
+  --badge-border: rgba(255, 209, 250, 0.5);
 }
