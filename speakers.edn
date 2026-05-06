@@ -1,19 +1,24 @@
 #{{:github/id "PEZ"
    :person/name "Peter Strömberg"}
-  {:github/id "andersfurseth"
+  {:github/id "duckyuck"
    :person/name "Anders Furseth"}
   {:github/id "cjohansen"
-   :person/name "Christian Johansen"}
+   :person/name "Christian Johansen"
+   :person/website {:site/url "https://cjohansen.no/"}}
   {:github/id "daslu"
    :person/name "Daniel Slutsky"}
   {:github/id "emil0r"
-   :person/name "Emil Bengtsson"}
+   :person/name "Emil Bengtsson"
+   :person/website {:site/url "https://emil0r.com/"}}
   {:github/id "holyjak"
-   :person/name "Jakub Holy"}
+   :person/name "Jakub Holy"
+   :person/website {:site/url "https://blog.jakubholy.net/"}}
   {:github/id "leifericf"
    :person/name "Leif Eric Fredheim"}
   {:github/id "magnars"
-   :person/name "Magnar Sveen"}
+   :person/name "Magnar Sveen"
+   :person/website {:site/url "https://magnars.com/"
+                    :site/title "magnars"}}
   {:github/id "quoll"
    :person/name "Paula Gearon"}
   {:github/id "teodoran"
@@ -21,4 +26,5 @@
    :person/website {:site/url "https://teodoran.github.io/"
                     :site/title "teodoran"}}
   {:github/id "teodorlu"
-   :person/name "Teodor Heggelund"}}
+   :person/name "Teodor Heggelund"
+   :person/website {:site/url "https://play.teod.eu/"}}}
