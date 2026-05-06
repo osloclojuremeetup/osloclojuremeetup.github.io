@@ -5,7 +5,8 @@
    [db]
    [sse]
    [starfederation.datastar.clojure.api :as d*]
-   [state]))
+   [state]
+   [components]))
 
 (defn render-meetup [meetup]
   (list
@@ -18,7 +19,7 @@
       [:div.talk
        [:div [:span (:talk/title talk)]
         [:span.dot " • "]
-        [:span.speaker (str/join ", " (keep :person/name (:talk/speakers talk)))]]
+        [:span.speaker (interpose ", " (keep components/speaker (:talk/speakers talk)))]]
        (for [ref (:talk/references talk)]
          [:div.reference
           [:a {:href (:reference/url ref)}
