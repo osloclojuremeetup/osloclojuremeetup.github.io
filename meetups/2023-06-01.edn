@@ -6,4 +6,4 @@
                  {:talk/title "Datamodellering og datalog i Datomic"
                   :talk/speakers #{{:github/id "cjohansen"}}}
                  {:talk/title "Datomic i produksjon: drift og skalering"
-                  :talk/speakers #{{:github/id "andersfurseth"}}}]}
+                  :talk/speakers #{{:github/id "duckyuck"}}}]}
