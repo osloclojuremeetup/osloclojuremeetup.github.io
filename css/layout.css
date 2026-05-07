@@ -62,3 +62,7 @@ h2 {
 #meetups .reference {
     margin-left: 0.5rem;
 }
+
+#meetups {
+    padding-bottom: 4rem;
+}
