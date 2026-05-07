@@ -13,10 +13,14 @@
         (:person/name speaker))))
 
 (comment
-  (set! *print-namespace-maps* false)
-  (require '[datomic.api :as d])
-  (def magnar (d/entity @state/!db [:github/id "magnars"]))
-  (speaker magnar)
+  (do (set! *print-namespace-maps* false)
+      (require '[datomic.api :as d])
+      (def magnar (d/entity @state/!db [:github/id "magnars"]))
+      (def anders (d/entity @state/!db [:github/id "duckyuck"])))
 
-  (-> magnar :person/website :site/url)
+  (-> anders find-speaker-website)
+
+  (-> magnar speaker)
+  (-> anders speaker)
+
   )
