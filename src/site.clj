@@ -19,7 +19,11 @@
   (->> (fs/glob "meetups" "*.edn")
        (map load-edn)
        (sort-by :meetup/date)
-       reverse))
+       reverse
+       (map (fn [meetup]
+              (update meetup :meetup/agenda
+                      (fn [agenda-items]
+                        (map-indexed #(assoc %2 :agenda/number %1) agenda-items)))))))
 
 (defn load-speakers []
   (load-edn "speakers.edn"))

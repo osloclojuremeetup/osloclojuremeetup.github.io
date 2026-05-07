@@ -52,6 +52,9 @@
     :db/cardinality :db.cardinality/one}
    {:db/ident :reference/url
     :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one}
+   {:db/ident :agenda/number
+    :db/valueType :db.type/long
     :db/cardinality :db.cardinality/one}])
 
 (defn create-empty []
