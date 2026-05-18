@@ -1,1 +1,31 @@
-[{:lunch/date "2026-05-20"}]
+[{:lunch/date "2026-05-20"}
+ {:lunch/date "2026-05-20"}
+ {:lunch/date "2026-04-08"}
+ {:lunch/date "2026-03-03"}
+ {:lunch/date "2026-01-13"}
+ {:lunch/date "2025-12-01"}
+ {:lunch/date "2025-09-24"}
+ {:lunch/date "2025-05-07"}
+ {:lunch/date "2025-02-11"}
+ {:lunch/date "2024-12-18"}
+ {:lunch/date "2024-11-13"}
+ {:lunch/date "2024-10-24"}
+ {:lunch/date "2024-08-21"}
+ {:lunch/date "2024-04-24"}
+ {:lunch/date "2024-02-14"}
+ {:lunch/date "2024-01-18"}
+ {:lunch/date "2023-11-01"}
+ {:lunch/date "2023-09-10"}
+ {:lunch/date "2023-06-01"}
+ {:lunch/date "2023-05-10"}
+ {:lunch/date "2023-03-08"}
+ {:lunch/date "2023-02-02"}
+ {:lunch/date "2022-11-24"}
+ {:lunch/date "2022-09-21"}
+ {:lunch/date "2022-08-03"}
+ {:lunch/date "2022-06-01"}
+ {:lunch/date "2022-03-08"}
+ {:lunch/date "2022-02-23"}
+ {:lunch/date "2022-02-09"}
+ {:lunch/date "2021-09-08"}
+ {:lunch/date "2021-06-30"}]
