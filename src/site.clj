@@ -21,17 +21,24 @@
        (sort-by :meetup/date)
        reverse
        (map (fn [meetup]
-              (update meetup :meetup/agenda
-                      (fn [agenda-items]
-                        (map-indexed #(assoc %2 :agenda/number %1) agenda-items)))))))
+              (-> meetup
+                  (update :meetup/agenda
+                          (fn [agenda-items]
+                            (map-indexed #(assoc %2 :agenda/number %1) agenda-items)))
+                  (assoc :event/type :event.type/meetup))))))
 
 (defn load-speakers []
   (load-edn "speakers.edn"))
 
+(defn load-lunches []
+  (->> (load-edn "lunches.edn")
+       (map #(assoc % :event/type :event.type/lunch))))
+
 (defn create-db []
   (-> (db/create-empty)
       (d/with (concat (load-meetups)
-                      (load-speakers)))
+                      (load-speakers)
+                      (load-lunches)))
       :db-after))
 
 (def html-files
