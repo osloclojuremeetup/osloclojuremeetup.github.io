@@ -1,6 +1,5 @@
 (ns db
   (:require
-   event
    [datomic.api :as d]))
 
 (def schema
