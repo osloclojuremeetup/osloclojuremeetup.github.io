@@ -1,7 +1,6 @@
 (ns frontpage
   (:require
    [assets]
-   [clojure.string :as str]
    [db]
    [sse]
    [starfederation.datastar.clojure.api :as d*]
@@ -24,6 +23,22 @@
          [:div.reference
           [:a {:href (:reference/url ref)}
            (:reference/label ref)]])])]))
+
+(defn render-lunch [lunch]
+  (list
+   [:div.date [:span (:lunch/date lunch)]]
+   [:div
+    [:div.lunch-title [:strong "Lunch"]]]))
+
+(def event-renderers
+  {:event.type/meetup #'render-meetup
+   :event.type/lunch #'render-lunch})
+
+(defn render-event [event]
+  (or (when-let [render (get event-renderers (:event/type event))]
+        (render event))
+      (throw (ex-info "Unknown event type"
+                      {:event/type (:event/type event)}))))
 
 (defn headers []
   (list
@@ -56,9 +71,8 @@
 
    [:h2 "Meetups"]
    [:div#meetups
-    (->> (db/find-meetups db)
-         (sort-by :meetup/date #(compare %2 %1))
-         (map render-meetup))]))
+    (->> (db/find-events db)
+         (map render-event))]))
 
 (defn render-static [db]
   [:html
