@@ -1,5 +1,6 @@
 (ns db
   (:require
+   event
    [datomic.api :as d]))
 
 (def schema
@@ -55,6 +56,13 @@
     :db/cardinality :db.cardinality/one}
    {:db/ident :agenda/number
     :db/valueType :db.type/long
+    :db/cardinality :db.cardinality/one}
+   {:db/ident :lunch/date
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one
+    :db/unique :db.unique/identity}
+   {:db/ident :event/type
+    :db/valueType :db.type/keyword
     :db/cardinality :db.cardinality/one}])
 
 (defn create-empty []
@@ -64,8 +72,15 @@
     @(d/transact conn schema)
     (d/db conn)))
 
-(defn find-meetups [db]
+(defn event->date [event]
+  (or (:meetup/date event)
+      (:lunch/date event)))
+
+(defn find-events [db]
   (->> (d/q '[:find ?e
-              :where [?e :meetup/date]]
+              :where
+              (or [?e :lunch/date]
+                  [?e :meetup/date])]
             db)
-       (map (fn [[eid]] (d/entity db eid)))))
+       (map (fn [[eid]] (d/entity db eid)))
+       (sort-by event->date #(compare %2 %1))))
