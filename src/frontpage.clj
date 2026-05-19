@@ -7,38 +7,43 @@
    [state]
    [components]))
 
-(defn render-meetup [meetup]
-  (list
-   [:div.date [:span (:meetup/date meetup)]]
-   [:div
-    [:div.meetup-title [:strong (:meetup/title meetup)]]
-    ;; [:div (:meetup/description meetup)]
-    (for [talk (->> (:meetup/agenda meetup)
-                    (sort-by :agenda/number))]
-      [:div.talk
-       [:div [:span (:talk/title talk)]
-        [:span.dot " • "]
-        [:span.speaker (interpose ", " (keep components/speaker (:talk/speakers talk)))]]
-       (for [ref (:talk/references talk)]
-         [:div.reference
-          [:a {:href (:reference/url ref)}
-           (:reference/label ref)]])])]))
+(defn render-meetups [meetups]
+  (->> meetups
+       (map (fn [meetup]
+              (list
+               [:div.date [:span (:meetup/date meetup)]]
+               [:div
+                [:div.meetup-title [:strong (:meetup/title meetup)]]
+                ;; [:div (:meetup/description meetup)]
+                (for [talk (->> (:meetup/agenda meetup)
+                                (sort-by :agenda/number))]
+                  [:div.talk
+                   [:div [:span (:talk/title talk)]
+                    [:span.dot " • "]
+                    [:span.speaker (interpose ", " (keep components/speaker (:talk/speakers talk)))]]
+                   (for [ref (:talk/references talk)]
+                     [:div.reference
+                      [:a {:href (:reference/url ref)}
+                       (:reference/label ref)]])])])))))
 
-(defn render-lunch [lunch]
+(defn render-lunches [lunches]
   (list
-   [:div.date [:span (:lunch/date lunch)]]
+   [:div.date (->> (map :lunch/date lunches)
+                   (interpose [:br]))]
    [:div
-    [:div.lunch-title [:strong "Lunch"]]]))
+    [:div.lunch-title [:strong (if (= 1 (count lunches))
+                                 "Lunch"
+                                 "Lunches")]]]))
 
 (def event-renderers
-  {:event.type/meetup #'render-meetup
-   :event.type/lunch #'render-lunch})
+  {:event.type/meetup #'render-meetups
+   :event.type/lunch #'render-lunches})
 
-(defn render-event [event]
-  (or (when-let [render (get event-renderers (:event/type event))]
-        (render event))
+(defn render-events [event-type events]
+  (or (when-let [render (get event-renderers event-type)]
+        (render events))
       (throw (ex-info "Unknown event type"
-                      {:event/type (:event/type event)}))))
+                      {:event/type event-type}))))
 
 (defn headers []
   (list
@@ -69,10 +74,12 @@
     [:a {:href "http://clojurians.net/"} "Clojurians-slacken"]
     "."]
 
-   [:h2 "Meetups"]
+   [:h2 "Events"]
    [:div#meetups
     (->> (db/find-events db)
-         (map render-event))]))
+         (partition-by :event/type)
+         (map (fn [events] (render-events (:event/type (first events))
+                                          events))))]))
 
 (defn render-static [db]
   [:html
